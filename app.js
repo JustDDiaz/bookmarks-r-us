@@ -1,6 +1,6 @@
 // app.js
 // Files
-const bookmarksController = require("./controllers/bookmarksController");
+const bookmarksController = require("./controllers/bookmarksControllers");
 // DEPENDENCIES
 const express = require("express");
 
