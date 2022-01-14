@@ -62,7 +62,7 @@ bookmarks.put("/:index", (request, response) => {
   if (bookmarksArray[index]) {
     bookmarksArray[index] = request.body;
     // bookmarksArray.splice(index, 1, request.body);
-    response.status(200).json(bookmarksArray);
+    response.status(200).json(bookmarksArray[index]);
   } else {
     response.status(404).json({ error: "Bookmark Not Found" });
   }

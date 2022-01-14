@@ -1,8 +1,10 @@
 // app.js
 // Files
 const bookmarksController = require("./controllers/bookmarksControllers");
+// In the middle of every request, check if the endpoint starts with /bookmarks
 // DEPENDENCIES
 const express = require("express");
+const cors = require("cors");
 
 // Create the Express app.
 const app = express();
@@ -14,8 +16,8 @@ const app = express();
 // IMPORTANT: make sure this comes *before* any controllers!
 // Otherwise, they won't have their stuff parsed from JSON.
 app.use(express.json());
+app.use(cors());
 
-// In the middle of every request, check if the endpoint starts with /bookmarks
 // If so, send it to the bookmarks controller/router.
 app.use("/bookmarks", bookmarksController);
 
